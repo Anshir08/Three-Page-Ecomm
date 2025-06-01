@@ -49,7 +49,7 @@ const CheckoutForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("form submit");
-        let status;
+        let status = "approved";
         if (form.cardNumber === "4242424242424242") {
             // Simulate Approved
             status = "approved";
