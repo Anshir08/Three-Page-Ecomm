@@ -7,7 +7,8 @@ export const createOrder = createAsyncThunk(
         try {
             const { data } = await axios.post(
                 "https://three-page-ecomm.onrender.com/api/orders",
-                orderData
+                orderData,
+                {withCredentials: true}
             );
             return data;
         } catch (error) {
@@ -21,7 +22,8 @@ export const getOrder = createAsyncThunk(
     async (productId, { rejectWithValue }) => {
         try {
             const response = await axios.get(
-                `https://three-page-ecomm.onrender.com/api/orders/${productId}`
+                `https://three-page-ecomm.onrender.com/api/orders/${productId}`,
+                {withCredentials: true}
             );
             return response.data;
         } catch (error) {

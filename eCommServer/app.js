@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
-import {connectDB} from "./utils/database.js";
+import { connectDB } from "./utils/database.js";
 import orderRoutes from "./Routes/Order.js";
 
 const app = express();
@@ -10,7 +10,12 @@ dotenv.config();
 
 // Middlewares
 app.use(express.json());
-app.use(cors());
+app.use(
+    cors({
+        origin: ["http://localhost:5173", "https://three-page-ecomm.vercel.app"],
+        credentials: true,
+    })
+);
 app.use(cookieParser());
 
 connectDB();
@@ -25,4 +30,3 @@ app.listen(PORT, () => {
 });
 
 export default app;
-
