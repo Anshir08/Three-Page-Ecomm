@@ -50,17 +50,17 @@ const CheckoutForm = () => {
         e.preventDefault();
         console.log("form submit");
         let status;
-        if (cardNumber === "4242424242424242") {
+        if (form.cardNumber === "4242424242424242") {
             // Simulate Approved
             status = "approved";
         }
 
-        if (cardNumber === "4000000000000002") {
+        if (form.cardNumber === "4000000000000002") {
             // Simulate Declined
             status = "declined";
         }
 
-        if (cardNumber === "5000000000000000") {
+        if (form.cardNumber === "5000000000000000") {
             // Simulate Gateway Error
             status = "gateway_error";
         }
